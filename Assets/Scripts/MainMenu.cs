@@ -12,14 +12,46 @@ public class MainMenu : MonoBehaviour
     public GameObject exitCreditsButton;
     public GameObject creditsButton;
 
+    bool timerActive = false;
+    float currentTime;
+    public int startTimer;
+
+    bool lvl1ButtonPressed = false;
+    bool quitButtonPressed = false;    
+
     void Start()
     {
         creditUI.SetActive(false);
+        currentTime = startTimer = 1;
+    }
+
+    //here//
+    void Update()
+    {
+        if (timerActive == true) 
+        {
+            currentTime = currentTime - Time.deltaTime;
+            Debug.Log(currentTime);
+
+            if (currentTime <= 0)
+            {
+                if (lvl1ButtonPressed == true)
+                {
+                    SceneManager.LoadScene("SampleScene");
+                }
+                if (quitButtonPressed == true)
+                {
+                    Debug.Log("Quitting Game");
+                    Application.Quit();    
+                }
+            }
+        }
     }
 
     public void LoadLevel1()
     {
-        SceneManager.LoadScene("SampleScene");
+        lvl1ButtonPressed = true; 
+        StartTime(); 
     }
 
     public void OpenCredits()
@@ -41,8 +73,18 @@ public class MainMenu : MonoBehaviour
     }
 
     public void QuitGame()
+    {           
+        quitButtonPressed = true;
+        StartTime();        
+    }
+    
+    public void StartTime()
     {
-        Debug.Log("Quit Game");
-        Application.Quit();
+        timerActive = true;
+    }
+
+    public void EndTime()
+    {
+        timerActive = false;
     }
 }
