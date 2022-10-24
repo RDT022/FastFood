@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject creditUI;
     public GameObject menuButtons;
+    
+    public GameObject exitCreditsButton;
+    public GameObject creditsButton;
 
     void Start()
     {
@@ -23,6 +27,8 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Credits button pressed");
         creditUI.SetActive(true);
         menuButtons.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(exitCreditsButton);
     }
 
     public void CloseCredits()
@@ -30,6 +36,8 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Credits button pressed");
         creditUI.SetActive(false);
         menuButtons.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(creditsButton);
     }
 
     public void QuitGame()
