@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIFadeIn : MonoBehaviour
+public class Fading : MonoBehaviour
 {
     [SerializeField] private CanvasGroup UIPhone;
     [SerializeField] private CanvasGroup UIPlayButton;
@@ -33,6 +33,4 @@ public class UIFadeIn : MonoBehaviour
         }
     }
     
-
-
 }
