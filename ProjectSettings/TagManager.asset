@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Tilemap
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
     locked: 0
   - name: Sprites
     uniqueID: 2460823643
+    locked: 0
+  - name: Backmap
+    uniqueID: 3609912129
     locked: 0
