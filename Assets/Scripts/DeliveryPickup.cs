@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DeliveryPickup : MonoBehaviour
 {
+
+    public GameObject[] DropOffPoints;
+
     void OnTriggerStay2D(Collider2D col)
     {
         if(Input.GetAxis("Fire1") > 0)
@@ -12,6 +15,8 @@ public class DeliveryPickup : MonoBehaviour
             if(pd != null)
             {
                 pd.hasDelivery = true;
+                DropOffPoints[Random.Range(0,DropOffPoints.Length)].SetActive(true);
+                gameObject.SetActive(false);
             }
         }
     }
