@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -768,7 +768,7 @@ TextureImporter:
     nameFileIdTable:
       StreetSpriteDark_13: 1962290613
       StreetSpriteDark_12: 2023677388
-      StreetSpriteDark_18: 932837458
+      StreetSpriteDark_10: -157882547
       StreetSpriteDark_24: -1272713081
       StreetSpriteDark_14: 1422442931
       StreetSpriteDark_22: -1465828235
@@ -796,7 +796,7 @@ TextureImporter:
       StreetSpriteDark_28: -476815398
       StreetSpriteDark_20: 380410032
       StreetSpriteDark_9: 1292877146
-      StreetSpriteDark_10: -157882547
+      StreetSpriteDark_18: 932837458
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

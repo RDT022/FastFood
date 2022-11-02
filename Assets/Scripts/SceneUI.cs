@@ -10,6 +10,7 @@ public class SceneUI : MonoBehaviour
     public GameObject Minimap;
     public GameObject Buttons;
     public GameObject ControlImage;
+    public GameObject minimapCamera;
 
     public static bool isPaused = false;
 
@@ -35,6 +36,7 @@ public class SceneUI : MonoBehaviour
                 Pause();
             }
         }
+        minimapCamera.transform.rotation = Quaternion.Euler(0,0,0);
     }
 
     public void Resume()

@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -22019,8 +22019,8 @@ TextureImporter:
       roguelikeCity_magenta_340: 1787747423
       roguelikeCity_magenta_269: -966978226
       roguelikeCity_magenta_352: -450652873
-      roguelikeCity_magenta_115: -2080169572
       roguelikeCity_magenta_519: -1970524863
+      roguelikeCity_magenta_115: -2080169572
       roguelikeCity_magenta_42: -1208592797
       roguelikeCity_magenta_370: -781492813
       roguelikeCity_magenta_855: 1452655377
@@ -22037,9 +22037,9 @@ TextureImporter:
       roguelikeCity_magenta_302: -1089910268
       roguelikeCity_magenta_354: -614097403
       roguelikeCity_magenta_463: -2132170800
+      roguelikeCity_magenta_1027: 1778580539
       roguelikeCity_magenta_583: 919454937
       roguelikeCity_magenta_988: -1659240942
-      roguelikeCity_magenta_1027: 1778580539
       roguelikeCity_magenta_732: 173762573
       roguelikeCity_magenta_310: 1177731679
       roguelikeCity_magenta_395: -884049333
@@ -22128,15 +22128,15 @@ TextureImporter:
       roguelikeCity_magenta_819: -2005687245
       roguelikeCity_magenta_882: -602133963
       roguelikeCity_magenta_127: 1325014113
-      roguelikeCity_magenta_162: 823771414
+      roguelikeCity_magenta_260: 858307124
       roguelikeCity_magenta_30: -1637571843
       roguelikeCity_magenta_421: -290935824
-      roguelikeCity_magenta_260: 858307124
       roguelikeCity_magenta_861: -915128993
       roguelikeCity_magenta_786: 738849152
-      roguelikeCity_magenta_987: 2016971185
+      roguelikeCity_magenta_162: 823771414
       roguelikeCity_magenta_244: 1943470434
       roguelikeCity_magenta_756: 1687637644
+      roguelikeCity_magenta_987: 2016971185
       roguelikeCity_magenta_496: -1777508378
       roguelikeCity_magenta_375: 519280825
       roguelikeCity_magenta_327: -1814248125
@@ -22207,9 +22207,9 @@ TextureImporter:
       roguelikeCity_magenta_586: -1368233567
       roguelikeCity_magenta_961: 913427593
       roguelikeCity_magenta_338: -1308911962
+      roguelikeCity_magenta_654: 363109344
       roguelikeCity_magenta_430: 574719879
       roguelikeCity_magenta_128: 1509078637
-      roguelikeCity_magenta_654: 363109344
       roguelikeCity_magenta_14: -261051661
       roguelikeCity_magenta_360: 328826851
       roguelikeCity_magenta_17: -286236870
@@ -22385,10 +22385,10 @@ TextureImporter:
       roguelikeCity_magenta_132: 1085658553
       roguelikeCity_magenta_198: -1748381261
       roguelikeCity_magenta_420: 16306672
-      roguelikeCity_magenta_589: 1032592642
+      roguelikeCity_magenta_964: -997177036
       roguelikeCity_magenta_291: 334808954
       roguelikeCity_magenta_777: -1028713887
-      roguelikeCity_magenta_964: -997177036
+      roguelikeCity_magenta_589: 1032592642
       roguelikeCity_magenta_865: 240044874
       roguelikeCity_magenta_446: 1748625699
       roguelikeCity_magenta_641: -1070754895
@@ -22448,10 +22448,10 @@ TextureImporter:
       roguelikeCity_magenta_771: -828797150
       roguelikeCity_magenta_795: -459853543
       roguelikeCity_magenta_546: -1477546548
-      roguelikeCity_magenta_878: -1561676114
       roguelikeCity_magenta_973: -1951724878
-      roguelikeCity_magenta_648: 1838513534
       roguelikeCity_magenta_1029: -144392924
+      roguelikeCity_magenta_648: 1838513534
+      roguelikeCity_magenta_878: -1561676114
       roguelikeCity_magenta_497: 1654256343
       roguelikeCity_magenta_714: -470632647
       roguelikeCity_magenta_108: 254155334
@@ -22477,9 +22477,9 @@ TextureImporter:
       roguelikeCity_magenta_111: 1155618547
       roguelikeCity_magenta_195: -686674320
       roguelikeCity_magenta_712: -2033852069
-      roguelikeCity_magenta_381: 1372770936
       roguelikeCity_magenta_505: -1373396602
       roguelikeCity_magenta_385: 121507139
+      roguelikeCity_magenta_381: 1372770936
       roguelikeCity_magenta_852: 2105934430
       roguelikeCity_magenta_461: -1975047639
       roguelikeCity_magenta_491: 1720248091
@@ -22488,12 +22488,12 @@ TextureImporter:
       roguelikeCity_magenta_991: 1309272321
       roguelikeCity_magenta_265: 272716776
       roguelikeCity_magenta_84: 962358133
-      roguelikeCity_magenta_311: -2104654288
+      roguelikeCity_magenta_812: 1835177553
       roguelikeCity_magenta_708: 1795536579
       roguelikeCity_magenta_255: -1329392533
-      roguelikeCity_magenta_812: 1835177553
-      roguelikeCity_magenta_875: -320688649
       roguelikeCity_magenta_847: -1986851373
+      roguelikeCity_magenta_875: -320688649
+      roguelikeCity_magenta_311: -2104654288
       roguelikeCity_magenta_706: -1579880329
       roguelikeCity_magenta_764: -2053412162
       roguelikeCity_magenta_492: -335449244
@@ -22506,7 +22506,6 @@ TextureImporter:
       roguelikeCity_magenta_348: -946826982
       roguelikeCity_magenta_815: -872933539
       roguelikeCity_magenta_80: -1332369268
-      roguelikeCity_magenta_102: 2100889237
       roguelikeCity_magenta_811: 1841471384
       roguelikeCity_magenta_665: -695126338
       roguelikeCity_magenta_335: 46674967
@@ -22517,6 +22516,7 @@ TextureImporter:
       roguelikeCity_magenta_881: -1387038732
       roguelikeCity_magenta_905: -9633538
       roguelikeCity_magenta_168: 1596880825
+      roguelikeCity_magenta_102: 2100889237
       roguelikeCity_magenta_154: -774770453
       roguelikeCity_magenta_769: -1632035632
       roguelikeCity_magenta_39: -255847287
