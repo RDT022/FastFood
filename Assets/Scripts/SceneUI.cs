@@ -7,11 +7,17 @@ using UnityEngine.EventSystems;
 public class SceneUI : MonoBehaviour
 {
     public GameObject PhoneUI;
+    public GameObject Minimap;
+    public GameObject Buttons;
+    public GameObject ControlImage;
 
     public static bool isPaused = false;
 
     void Start()
     {
+        Minimap.SetActive(true);
+        ControlImage.SetActive(false);
+        Buttons.SetActive(false);
         Resume();
     }
 
@@ -35,12 +41,29 @@ public class SceneUI : MonoBehaviour
     {
         Time.timeScale = 1f;
         isPaused = false;
+        Minimap.SetActive(true);
+        Buttons.SetActive(false);
+        ControlImage.SetActive(false);
     }
 
     public void Pause()
     {
         Time.timeScale = 0f;
         isPaused = true;        
+        Minimap.SetActive(false);
+        Buttons.SetActive(true);
+    }
+
+    public void OpenControls()
+    {
+        Buttons.SetActive(false);
+        ControlImage.SetActive(true);
+    }
+
+    public void CloseControls()
+    {
+        Buttons.SetActive(true);
+        ControlImage.SetActive(false);        
     }
 
     public void OpenUI()

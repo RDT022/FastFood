@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Tilemap
-  - 
+  - Minimap
   - 
   - 
   - 
@@ -40,6 +40,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Top
+    uniqueID: 3939989451
     locked: 0
   - name: Sprites
     uniqueID: 2460823643
