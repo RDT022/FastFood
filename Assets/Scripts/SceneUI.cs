@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class SceneUI : MonoBehaviour
 {
@@ -55,5 +57,15 @@ public class SceneUI : MonoBehaviour
         }
     }
 
+    public void BacktoMain()
+    {
+        SceneManager.LoadScene("Main_Menu");                
+    }
 
+    public void ExitGame()
+    {
+        Debug.Log("Quitting Game");
+        Application.Quit();   
+
+    }
 }
