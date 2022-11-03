@@ -116,6 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DropOffPoints: []
+  audioSource: {fileID: 0}
+  clip: {fileID: 8300000, guid: 941075ea40e3f2c4bbf10d2469863bd5, type: 3}
 --- !u!1 &7736187716553573310
 GameObject:
   m_ObjectHideFlags: 0

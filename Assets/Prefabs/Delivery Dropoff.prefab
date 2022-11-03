@@ -117,6 +117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PickupPoints:
   - {fileID: 0}
+  audioSource: {fileID: 0}
+  clip: {fileID: 8300000, guid: 41354d27ac996244c84fd79929b3fdc2, type: 3}
 --- !u!1 &6024156692352981677
 GameObject:
   m_ObjectHideFlags: 0

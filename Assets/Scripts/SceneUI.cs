@@ -11,6 +11,8 @@ public class SceneUI : MonoBehaviour
     public GameObject Buttons;
     public GameObject ControlImage;
     public GameObject minimapCamera;
+    public GameObject defaultButton;
+    public GameObject controlsButton;
 
     public static bool isPaused = false;
 
@@ -24,7 +26,7 @@ public class SceneUI : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetButtonDown("Fire2"))
         {
             OpenUI();
             if (isPaused)
@@ -46,6 +48,7 @@ public class SceneUI : MonoBehaviour
         Minimap.SetActive(true);
         Buttons.SetActive(false);
         ControlImage.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void Pause()
@@ -54,18 +57,24 @@ public class SceneUI : MonoBehaviour
         isPaused = true;        
         Minimap.SetActive(false);
         Buttons.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(defaultButton);
     }
 
     public void OpenControls()
     {
         Buttons.SetActive(false);
         ControlImage.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(controlsButton);
     }
 
     public void CloseControls()
     {
         Buttons.SetActive(true);
-        ControlImage.SetActive(false);        
+        ControlImage.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(defaultButton);
     }
 
     public void OpenUI()
@@ -84,6 +93,7 @@ public class SceneUI : MonoBehaviour
 
     public void BacktoMain()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Main_Menu");                
     }
 

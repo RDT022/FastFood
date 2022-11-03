@@ -6,6 +6,8 @@ public class DeliveryDropoff : MonoBehaviour
 {
 
     public GameObject[] PickupPoints;
+    public AudioSource audioSource;
+    public AudioClip clip;
 
     void OnTriggerStay2D(Collider2D col)
     {
@@ -15,7 +17,9 @@ public class DeliveryDropoff : MonoBehaviour
             if(pd != null)
             {
                 pd.hasDelivery = false;
+                pd.Score += (1000 + (10 * (int)pd.deliveryTimer));
                 PickupPoints[Random.Range(0,PickupPoints.Length)].SetActive(true);
+                audioSource.PlayOneShot(clip);
                 gameObject.SetActive(false);
             }
         }

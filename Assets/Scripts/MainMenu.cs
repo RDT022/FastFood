@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
 
     bool timerActive = false;
     float currentTime;
-    public int startTimer;
+    public float startTimer;
 
     bool lvl1ButtonPressed = false;
     bool quitButtonPressed = false;    
@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         creditUI.SetActive(false);
-        currentTime = startTimer = 1;
+        currentTime = startTimer = 0.25f;
     }
 
     //here//
