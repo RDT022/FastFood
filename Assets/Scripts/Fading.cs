@@ -7,8 +7,11 @@ public class Fading : MonoBehaviour
 {
     [SerializeField] private CanvasGroup UIPhone;
     [SerializeField] private CanvasGroup UIPlayButton;
+    [SerializeField] private CanvasGroup TitleOval;
+    [SerializeField] private CanvasGroup TitleWords;
 
-    public float timerValue = 1;
+    public float timerValue1 = 1;
+    public float timerValue2 = 2;
 
     void Start()
     {
@@ -17,19 +20,34 @@ public class Fading : MonoBehaviour
 
     void Update()
     {
-        if (timerValue > 0)
+        if (timerValue1 > 0)
         {
-            timerValue -= Time.deltaTime;
+            timerValue1 -= Time.deltaTime;
         }
         else 
         {
-            timerValue = 0;
+            timerValue1 = 0;
         }
         
-        if (timerValue == 0)
+        if (timerValue1 == 0)
         {
             UIPhone.alpha += Time.deltaTime;
             UIPlayButton.alpha += Time.deltaTime;
+        }        
+        
+        if (timerValue2 > 0)
+        {
+            timerValue2 -= Time.deltaTime;
+        }
+        else 
+        {
+            timerValue2 = 0;
+        }
+        
+        if (timerValue2 == 0)
+        {
+            TitleOval.alpha += Time.deltaTime;
+            TitleWords.alpha += Time.deltaTime;
         }
     }
     

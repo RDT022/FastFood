@@ -12,17 +12,23 @@ public class MainMenu : MonoBehaviour
     public GameObject exitCreditsButton;
     public GameObject creditsButton;
 
+    public GameObject ModeOptions;
+
+    public GameObject MainMenuObj;
+
     bool timerActive = false;
     float currentTime;
     public float startTimer;
 
-    bool lvl1ButtonPressed = false;
+    bool lvlButtonPressed = false;
+    bool MLMButtonPressed = false;
     bool quitButtonPressed = false;    
 
     void Start()
     {
         creditUI.SetActive(false);
         currentTime = startTimer = 0.25f;
+        ModeOptions.SetActive(false);
     }
 
     //here//
@@ -35,9 +41,13 @@ public class MainMenu : MonoBehaviour
 
             if (currentTime <= 0)
             {
-                if (lvl1ButtonPressed == true)
+                if (lvlButtonPressed == true)
                 {
                     SceneManager.LoadScene("SampleScene");
+                }                
+                if (MLMButtonPressed == true)
+                {
+                    SceneManager.LoadScene("MLMScene");
                 }
                 if (quitButtonPressed == true)
                 {
@@ -48,9 +58,15 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void LoadLevel1()
+    public void LoadNormalLevel()
     {
-        lvl1ButtonPressed = true; 
+        lvlButtonPressed = true; 
+        StartTime(); 
+    }
+
+    public void LoadMLMLevel()
+    {
+        MLMButtonPressed = true; 
         StartTime(); 
     }
 
@@ -86,5 +102,11 @@ public class MainMenu : MonoBehaviour
     public void EndTime()
     {
         timerActive = false;
+    }
+
+    public void ModeSelect()
+    {
+        MainMenuObj.SetActive(false);
+        ModeOptions.SetActive(true);
     }
 }
