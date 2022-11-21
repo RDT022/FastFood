@@ -17,6 +17,7 @@ public class DeliveryDropoff : MonoBehaviour
             if(pd != null)
             {
                 pd.hasDelivery = false;
+                pd.addTime(10);
                 pd.Score += (1000 + (10 * (int)pd.deliveryTimer));
                 PickupPoints[Random.Range(0,PickupPoints.Length)].SetActive(true);
                 audioSource.PlayOneShot(clip);

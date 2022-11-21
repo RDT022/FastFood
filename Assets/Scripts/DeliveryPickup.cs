@@ -17,7 +17,8 @@ public class DeliveryPickup : MonoBehaviour
             if(pd != null)
             {
                 pd.hasDelivery = true;
-                pd.addTime();
+                pd.shiftStarted = true;
+                pd.addTime(20);
                 DropOffPoints[Random.Range(0,DropOffPoints.Length)].SetActive(true);
                 audioSource.PlayOneShot(clip);
                 gameObject.SetActive(false);

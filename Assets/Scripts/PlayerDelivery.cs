@@ -7,6 +7,8 @@ public class PlayerDelivery : MonoBehaviour
 {
     public bool hasDelivery = false;
 
+    public bool shiftStarted = false;
+
     public int Score;
 
     public float deliveryTimer { get; private set; }
@@ -44,21 +46,25 @@ public class PlayerDelivery : MonoBehaviour
         if(hasDelivery)
         {
             deliverySprite.SetActive(true);
+        }
+        if (shiftStarted)
+        {
             deliveryTimer -= Time.deltaTime;
-            if(deliveryTimer < 0)
+        }
+        if (deliveryTimer < 0)
+        {
+            shiftStarted = false;
+            foreach (GameObject p in DropOffPoints)
             {
-                foreach(GameObject p in DropOffPoints)
+                if (p.activeSelf == true)
                 {
-                    if(p.activeSelf == true)
-                    {
-                        p.SetActive(false);
-                    }
+                    p.SetActive(false);
                 }
-                PickupPoints[Random.Range(0, PickupPoints.Length)].SetActive(true);
-                Lives--;
-                deliveryTimer = starterTimerValue;
-                hasDelivery = false;
             }
+            PickupPoints[Random.Range(0, PickupPoints.Length)].SetActive(true);
+            Lives--;
+            deliveryTimer = starterTimerValue;
+            hasDelivery = false;
         }
         else
         {
@@ -70,8 +76,8 @@ public class PlayerDelivery : MonoBehaviour
         }
     }
 
-    public void addTime()
+    public void addTime(int t)
     {
-        deliveryTimer += 30;
+        deliveryTimer += t;
     }
 }
