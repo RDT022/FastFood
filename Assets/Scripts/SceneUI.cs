@@ -13,14 +13,20 @@ public class SceneUI : MonoBehaviour
     public GameObject minimapCamera;
     public GameObject defaultButton;
     public GameObject controlsButton;
+    public GameObject optionsScreen;
 
     public static bool isPaused = false;
+     
+    public AudioSource _AudioSource1;
+    public AudioSource _AudioSource2;
+    public AudioSource _AudioSource3;
 
     void Start()
     {
         Minimap.SetActive(true);
         ControlImage.SetActive(false);
         Buttons.SetActive(false);
+        optionsScreen.SetActive(false);
         Resume();
     }
 
@@ -88,6 +94,37 @@ public class SceneUI : MonoBehaviour
 
                 animator.SetBool("open", !isOpen);
             }
+        }
+    }
+
+    public void Options()
+    {
+        Buttons.SetActive(false);
+        optionsScreen.SetActive(true);
+    }
+
+    public void CloseOptions()
+    {
+        Buttons.SetActive(true);
+        optionsScreen.SetActive(false);
+    }
+
+    public void ChangeBGM()
+    {
+        if (_AudioSource1.isPlaying)
+        {
+            _AudioSource1.Stop();
+            _AudioSource2.Play();
+        }
+        else if (_AudioSource2.isPlaying)
+        {
+            _AudioSource2.Stop();
+            _AudioSource3.Play();
+        }
+        else
+        {
+            _AudioSource3.Stop();     
+            _AudioSource1.Play();
         }
     }
 
