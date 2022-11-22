@@ -17,9 +17,8 @@ public class PlayerDelivery : MonoBehaviour
 
     public GameObject deliverySprite;
 
-    public GameObject[] DropOffPoints;
-
-    public GameObject[] PickupPoints;
+    [SerializeField]
+    private LocationHolder lh;
 
     public int Lives
     {
@@ -58,14 +57,9 @@ public class PlayerDelivery : MonoBehaviour
         if (deliveryTimer < 0)
         {
             shiftStarted = false;
-            foreach (GameObject p in DropOffPoints)
-            {
-                if (p.activeSelf == true)
-                {
-                    p.SetActive(false);
-                }
-            }
-            PickupPoints[Random.Range(0, PickupPoints.Length)].SetActive(true);
+            lh.ActivePoint.SetActive(false);
+            GameObject point = lh.PickupPoints[Random.Range(0, lh.PickupPoints.Length)];
+            point.SetActive(true);
             Lives--;
             deliveryTimer = starterTimerValue;
             hasDelivery = false;

@@ -16,10 +16,14 @@ public class SceneUI : MonoBehaviour
     public GameObject optionsScreen;
 
     public static bool isPaused = false;
-     
-    public AudioSource _AudioSource1;
-    public AudioSource _AudioSource2;
-    public AudioSource _AudioSource3;
+
+    [SerializeField]
+    private AudioSource audioSource;
+
+    public AudioClip[] musicTracks;
+
+    private int counter = 0;
+
 
     void Start()
     {
@@ -27,6 +31,8 @@ public class SceneUI : MonoBehaviour
         ControlImage.SetActive(false);
         Buttons.SetActive(false);
         optionsScreen.SetActive(false);
+        audioSource.clip = musicTracks[counter];
+        audioSource.Play();
         Resume();
     }
 
@@ -101,30 +107,33 @@ public class SceneUI : MonoBehaviour
     {
         Buttons.SetActive(false);
         optionsScreen.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(optionsScreen);
     }
 
     public void CloseOptions()
     {
         Buttons.SetActive(true);
         optionsScreen.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(defaultButton);
     }
 
     public void ChangeBGM()
     {
-        if (_AudioSource1.isPlaying)
+        if (counter != musicTracks.Length - 1)
         {
-            _AudioSource1.Stop();
-            _AudioSource2.Play();
-        }
-        else if (_AudioSource2.isPlaying)
-        {
-            _AudioSource2.Stop();
-            _AudioSource3.Play();
+            counter++;
+            audioSource.Stop();
+            audioSource.clip = musicTracks[counter];
+            audioSource.Play();
         }
         else
         {
-            _AudioSource3.Stop();     
-            _AudioSource1.Play();
+            counter = 0;
+            audioSource.Stop();
+            audioSource.clip = musicTracks[counter];
+            audioSource.Play();
         }
     }
 
@@ -137,7 +146,6 @@ public class SceneUI : MonoBehaviour
     public void ExitGame()
     {
         Debug.Log("Quitting Game");
-        Application.Quit();   
-
+        Application.Quit();
     }
 }

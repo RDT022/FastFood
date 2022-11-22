@@ -5,9 +5,12 @@ using UnityEngine;
 public class DeliveryPickup : MonoBehaviour
 {
 
-    public GameObject[] DropOffPoints;
     public AudioSource audioSource;
     public AudioClip clip;
+
+    [SerializeField]
+    private LocationHolder lh;
+
 
     void OnTriggerStay2D(Collider2D col)
     {
@@ -19,7 +22,9 @@ public class DeliveryPickup : MonoBehaviour
                 pd.hasDelivery = true;
                 pd.shiftStarted = true;
                 pd.addTime(20);
-                DropOffPoints[Random.Range(0,DropOffPoints.Length)].SetActive(true);
+                GameObject point = lh.DropoffPoints[Random.Range(0,lh.DropoffPoints.Length)];
+                point.SetActive(true);
+                lh.ActivePoint = point;
                 audioSource.PlayOneShot(clip);
                 gameObject.SetActive(false);
             }
