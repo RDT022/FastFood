@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public GameObject creditsButton;
 
     public GameObject ModeOptions;
+    public GameObject ModeButton;
 
     public GameObject MainMenuObj;
 
@@ -108,5 +109,7 @@ public class MainMenu : MonoBehaviour
     {
         MainMenuObj.SetActive(false);
         ModeOptions.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(ModeButton);
     }
 }

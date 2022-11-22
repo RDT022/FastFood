@@ -20,7 +20,7 @@ public class DeliveryDropoff : MonoBehaviour
             if(pd != null)
             {
                 pd.hasDelivery = false;
-                pd.addTime(10);
+                pd.addTime(30);
                 pd.Score += (1000 + (10 * (int)pd.deliveryTimer));
                 GameObject point = lh.PickupPoints[Random.Range(0, lh.PickupPoints.Length)];
                 point.SetActive(true);
