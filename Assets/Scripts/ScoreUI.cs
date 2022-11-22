@@ -13,8 +13,6 @@ public class ScoreUI : MonoBehaviour
 
     public TextMeshProUGUI TimerText;
 
-    public TextMeshProUGUI StarText;
-
     //star rating ui//
     public GameObject Star1;
     public GameObject Star2;
@@ -39,7 +37,6 @@ public class ScoreUI : MonoBehaviour
         {
             score = player.Score;
             TimerText.SetText($"Timer: {(int)player.deliveryTimer}");
-            StarText.SetText($"Star Rating: {player.Lives}");
         }
         ScoreText.SetText($"Score: {score}");
 

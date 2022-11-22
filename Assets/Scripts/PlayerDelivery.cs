@@ -47,6 +47,10 @@ public class PlayerDelivery : MonoBehaviour
         {
             deliverySprite.SetActive(true);
         }
+        else
+        {
+            deliverySprite.SetActive(false);
+        }
         if (shiftStarted)
         {
             deliveryTimer -= Time.deltaTime;
@@ -65,10 +69,6 @@ public class PlayerDelivery : MonoBehaviour
             Lives--;
             deliveryTimer = starterTimerValue;
             hasDelivery = false;
-        }
-        else
-        {
-            deliverySprite.SetActive(false);
         }
         if(Lives == 0)
         {
