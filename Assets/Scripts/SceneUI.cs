@@ -6,10 +6,12 @@ using UnityEngine.EventSystems;
 
 public class SceneUI : MonoBehaviour
 {
-    public GameObject PhoneUI;
-    public GameObject Minimap;
-    public GameObject Buttons;
-    public GameObject ControlImage;
+    public GameObject phoneUI;
+    public GameObject minimap;
+    public GameObject buttons;
+    public GameObject controlButtons;
+    public GameObject controlImageKB;
+    public GameObject controlImageCon;
     public GameObject minimapCamera;
     public GameObject defaultButton;
     public GameObject controlsButton;
@@ -27,9 +29,11 @@ public class SceneUI : MonoBehaviour
 
     void Start()
     {
-        Minimap.SetActive(true);
-        ControlImage.SetActive(false);
-        Buttons.SetActive(false);
+        minimap.SetActive(true);
+        controlImageKB.SetActive(false);
+        controlImageCon.SetActive(false);
+        buttons.SetActive(false);
+        controlButtons.SetActive(false);
         optionsScreen.SetActive(false);
         audioSource.clip = musicTracks[counter];
         audioSource.Play();
@@ -57,9 +61,11 @@ public class SceneUI : MonoBehaviour
     {
         Time.timeScale = 1f;
         isPaused = false;
-        Minimap.SetActive(true);
-        Buttons.SetActive(false);
-        ControlImage.SetActive(false);
+        minimap.SetActive(true);
+        buttons.SetActive(false);
+        controlButtons.SetActive(false);
+        controlImageKB.SetActive(false);
+        controlImageCon.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
     }
 
@@ -67,33 +73,51 @@ public class SceneUI : MonoBehaviour
     {
         Time.timeScale = 0f;
         isPaused = true;        
-        Minimap.SetActive(false);
-        Buttons.SetActive(true);
+        minimap.SetActive(false);
+        buttons.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(defaultButton);
     }
 
-    public void OpenControls()
+    public void Controls()
     {
-        Buttons.SetActive(false);
-        ControlImage.SetActive(true);
+        buttons.SetActive(false);
+        controlButtons.SetActive(true);
+    }
+
+    public void OpenKeyboardControls()
+    {
+        buttons.SetActive(false);
+        controlButtons.SetActive(false);
+        controlImageKB.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(controlsButton);
+    }
+    
+    public void OpenControllerControls()
+    {
+        buttons.SetActive(false);
+        controlButtons.SetActive(false);
+        controlImageCon.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(controlsButton);
     }
 
     public void CloseControls()
     {
-        Buttons.SetActive(true);
-        ControlImage.SetActive(false);
+        buttons.SetActive(true);
+        controlButtons.SetActive(false);
+        controlImageKB.SetActive(false);
+        controlImageCon.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(defaultButton);
     }
 
     public void OpenUI()
     {
-        if (PhoneUI != null)
+        if (phoneUI != null)
         {
-            Animator animator = PhoneUI.GetComponent<Animator>();
+            Animator animator = phoneUI.GetComponent<Animator>();
             if (animator != null)
             {
                 bool isOpen = animator.GetBool("open");
@@ -105,7 +129,7 @@ public class SceneUI : MonoBehaviour
 
     public void Options()
     {
-        Buttons.SetActive(false);
+        buttons.SetActive(false);
         optionsScreen.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(optionsScreen);
@@ -113,7 +137,7 @@ public class SceneUI : MonoBehaviour
 
     public void CloseOptions()
     {
-        Buttons.SetActive(true);
+        buttons.SetActive(true);
         optionsScreen.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(defaultButton);
