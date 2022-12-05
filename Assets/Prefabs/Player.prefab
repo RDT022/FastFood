@@ -274,6 +274,34 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2830711115708314117, guid: 78187e6c03de74a42b36ced02e23bd50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.503654
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830711115708314117, guid: 78187e6c03de74a42b36ced02e23bd50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.49631917
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830711115708314117, guid: 78187e6c03de74a42b36ced02e23bd50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5036539
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830711115708314117, guid: 78187e6c03de74a42b36ced02e23bd50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.49631923
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830711115708314117, guid: 78187e6c03de74a42b36ced02e23bd50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 89.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830711115708314117, guid: 78187e6c03de74a42b36ced02e23bd50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 89.999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830711115708314117, guid: 78187e6c03de74a42b36ced02e23bd50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.001
+      objectReference: {fileID: 0}
     - target: {fileID: 2830711116306913623, guid: 78187e6c03de74a42b36ced02e23bd50, type: 3}
       propertyPath: m_Name
       value: smoke
