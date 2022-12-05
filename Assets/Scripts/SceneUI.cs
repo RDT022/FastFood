@@ -16,6 +16,11 @@ public class SceneUI : MonoBehaviour
     public GameObject defaultButton;
     public GameObject controlsButton;
     public GameObject optionsScreen;
+    public GameObject gasMeter;
+
+    public GameObject defaultControlsButton;
+    public GameObject exitKBButton;
+    public GameObject exitConButton;
 
     public static bool isPaused = false;
 
@@ -66,6 +71,7 @@ public class SceneUI : MonoBehaviour
         controlButtons.SetActive(false);
         controlImageKB.SetActive(false);
         controlImageCon.SetActive(false);
+        gasMeter.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
     }
 
@@ -75,6 +81,7 @@ public class SceneUI : MonoBehaviour
         isPaused = true;        
         minimap.SetActive(false);
         buttons.SetActive(true);
+        gasMeter.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(defaultButton);
     }
@@ -83,6 +90,8 @@ public class SceneUI : MonoBehaviour
     {
         buttons.SetActive(false);
         controlButtons.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(defaultControlsButton);
     }
 
     public void OpenKeyboardControls()
@@ -91,7 +100,7 @@ public class SceneUI : MonoBehaviour
         controlButtons.SetActive(false);
         controlImageKB.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(controlsButton);
+        EventSystem.current.SetSelectedGameObject(exitKBButton);
     }
     
     public void OpenControllerControls()
@@ -100,7 +109,7 @@ public class SceneUI : MonoBehaviour
         controlButtons.SetActive(false);
         controlImageCon.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(controlsButton);
+        EventSystem.current.SetSelectedGameObject(exitConButton);
     }
 
     public void CloseControls()
