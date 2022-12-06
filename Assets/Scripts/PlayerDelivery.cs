@@ -7,6 +7,8 @@ public class PlayerDelivery : MonoBehaviour
 {
     public bool hasDelivery = false;
 
+    public bool fakeDelivery = false;
+
     public bool shiftStarted = false;
 
     public int Score;
@@ -14,8 +16,10 @@ public class PlayerDelivery : MonoBehaviour
     public float deliveryTimer { get; private set; }
 
     public float starterTimerValue;
-
-    public GameObject deliverySprite;
+    [SerializeField]
+    GameObject deliverySprite;
+    [SerializeField]
+    GameObject fakeDeliverySprite;
 
     [SerializeField]
     private LocationHolder lh;
@@ -45,7 +49,7 @@ public class PlayerDelivery : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hasDelivery)
+        if (hasDelivery)
         {
             deliverySprite.SetActive(true);
         }
@@ -53,22 +57,23 @@ public class PlayerDelivery : MonoBehaviour
         {
             deliverySprite.SetActive(false);
         }
+        if (fakeDelivery)
+        {
+            fakeDeliverySprite.SetActive(true);
+        }
+        else
+        {
+            fakeDeliverySprite.SetActive(false);
+        }
         if (shiftStarted)
         {
             deliveryTimer -= Time.deltaTime;
         }
         if (deliveryTimer < 0)
         {
-            shiftStarted = false;
-            lh.ActivePoint.SetActive(false);
-            GameObject point = lh.PickupPoints[Random.Range(0, lh.PickupPoints.Length)];
-            point.SetActive(true);
-            Lives--;
-            deliveryTimer = starterTimerValue;
-            hasDelivery = false;
-            lh.ActivePoint = point;
+            ReduceLives();
         }
-        if(Lives == 0)
+        if (Lives == 0)
         {
             SceneManager.LoadScene("LoseScene");
         }
@@ -82,5 +87,17 @@ public class PlayerDelivery : MonoBehaviour
     public void emitStars()
     {
         stars.Play();
+    }
+
+    public void ReduceLives()
+    {
+        shiftStarted = false;
+        lh.ActivePoint.SetActive(false);
+        GameObject point = lh.PickupPoints[Random.Range(0, lh.PickupPoints.Length)];
+        point.SetActive(true);
+        Lives--;
+        deliveryTimer = starterTimerValue;
+        hasDelivery = false;
+        lh.ActivePoint = point;
     }
 }

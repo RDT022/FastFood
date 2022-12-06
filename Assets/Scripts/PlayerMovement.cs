@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     float movePlayer;
     float rotPlayer;
 
+    public bool murphyMode;
+
     [SerializeField]
     ParticleSystem sparks;
     bool isSparking = false;
@@ -83,6 +85,10 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
+        if(murphyMode)
+        {
+            gasMeterValue -= Time.deltaTime;
+        }
         if (!isSparking)
         {
             sparks.Play();
