@@ -11,7 +11,6 @@ public class DeliveryDropoff : MonoBehaviour
     [SerializeField]
     private LocationHolder lh;
 
-
     void OnTriggerStay2D(Collider2D col)
     {
         if(Input.GetAxis("Fire1") > 0)
@@ -26,6 +25,7 @@ public class DeliveryDropoff : MonoBehaviour
                 point.SetActive(true);
                 lh.ActivePoint = point;
                 audioSource.PlayOneShot(clip);
+                pd.emitStars();
                 gameObject.SetActive(false);
             }
         }

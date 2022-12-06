@@ -20,6 +20,9 @@ public class PlayerDelivery : MonoBehaviour
     [SerializeField]
     private LocationHolder lh;
 
+    [SerializeField]
+    ParticleSystem stars;
+
     public int Lives
     {
         get
@@ -74,5 +77,10 @@ public class PlayerDelivery : MonoBehaviour
     public void addTime(int t)
     {
         deliveryTimer += t;
+    }
+
+    public void emitStars()
+    {
+        stars.Play();
     }
 }
