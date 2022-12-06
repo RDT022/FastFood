@@ -18,10 +18,19 @@ public class PlayerMovement : MonoBehaviour
     float movePlayer;
     float rotPlayer;
 
+    [SerializeField]
+    ParticleSystem sparks;
+    bool isSparking = false;
+    [SerializeField]
+    ParticleSystem smoke;
+
+
     Rigidbody2D rb;
 
     void Start()
     {
+        sparks.Stop();
+        smoke.Play();
         rb = GetComponent<Rigidbody2D>();
         gasMeterMaskOGSize = gasMeterMask.rectTransform.rect.width;
     }
@@ -29,13 +38,23 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         readInputs();
-        if(movePlayer!= 0)
+        if (gasMeterValue <= 0)
         {
-            gasMeterValue -= 1.5f * Time.deltaTime;
+            gasMeterValue = 0;
+            topSpeed = 5f;
+            smoke.Stop();
         }
-        else if(rotPlayer!= 0)
+        else
         {
-            gasMeterValue -= Time.deltaTime;
+            topSpeed = 10f;
+            if (movePlayer != 0)
+            {
+                gasMeterValue -= 1.5f * Time.deltaTime;
+            }
+            else if (rotPlayer != 0)
+            {
+                gasMeterValue -= Time.deltaTime;
+            }
         }
         rb.velocity = transform.up * topSpeed * movePlayer * terrainMoveSpeed;
         transform.Rotate(0f, 0f, -1 * rotSpeed * rotPlayer * Time.deltaTime * terrainRotSpeed);
@@ -56,5 +75,26 @@ public class PlayerMovement : MonoBehaviour
     public void RefillGas()
     {
         gasMeterValue = 100f;
+        smoke.Play();
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!isSparking)
+        {
+            sparks.Play();
+            Invoke("ParticleReset", 0.1f);
+            isSparking = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        sparks.Stop();
+    }
+
+    void ParticleReset()
+    {
+        isSparking = false;
     }
 }
