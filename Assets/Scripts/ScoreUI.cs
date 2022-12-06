@@ -7,9 +7,13 @@ public class ScoreUI : MonoBehaviour
 {
     static int score;
 
+    static int highScore;
+
     public PlayerDelivery player;
 
     public TextMeshProUGUI ScoreText;
+
+    public TextMeshProUGUI HighScoreText;
 
     public TextMeshProUGUI TimerText;
 
@@ -38,7 +42,12 @@ public class ScoreUI : MonoBehaviour
             score = player.Score;
             TimerText.SetText($"Timer: {(int)player.deliveryTimer}");
         }
+        if(score > highScore)
+        {
+            highScore = score;
+        }
         ScoreText.SetText($"Score: {score}");
+        HighScoreText.SetText($"{highScore}");
 
         //yeah it's more than it needs to be but this way works too//
         if (player.Lives == 5)
