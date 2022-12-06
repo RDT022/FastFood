@@ -48,7 +48,7 @@ public class MainMenu : MonoBehaviour
                 }                
                 if (MLMButtonPressed == true)
                 {
-                    SceneManager.LoadScene("MLMScene");
+                    SceneManager.LoadScene("MurphysLawMode");
                 }
                 if (quitButtonPressed == true)
                 {

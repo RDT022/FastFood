@@ -23,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
     bool isSparking = false;
     [SerializeField]
     ParticleSystem smoke;
+    [SerializeField]
+    ParticleSystem splash;
+    bool isSplashing = false;
 
 
     Rigidbody2D rb;
@@ -83,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
         if (!isSparking)
         {
             sparks.Play();
-            Invoke("ParticleReset", 0.1f);
+            Invoke("sparkReset", 0.1f);
             isSparking = true;
         }
     }
@@ -93,8 +96,23 @@ public class PlayerMovement : MonoBehaviour
         sparks.Stop();
     }
 
-    void ParticleReset()
+    void sparkReset()
     {
         isSparking = false;
+    }
+
+    public void splashParticle()
+    {
+        if(!isSplashing)
+        {
+            splash.Play();
+            Invoke("splashReset", 0.1f);
+            isSplashing = true;
+        }
+    }
+
+    void splashReset()
+    {
+        isSplashing = false;
     }
 }
