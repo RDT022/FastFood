@@ -63,6 +63,7 @@ public class PlayerDelivery : MonoBehaviour
             Lives--;
             deliveryTimer = starterTimerValue;
             hasDelivery = false;
+            lh.ActivePoint = point;
         }
         if(Lives == 0)
         {
